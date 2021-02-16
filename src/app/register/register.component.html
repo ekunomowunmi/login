@@ -3,33 +3,33 @@
         <mdb-card class="text-white white-shadow w-30vw top-30">
             <!--Card content-->
             <mdb-card-body>
-          
+
               <!--Title-->
               <mdb-card-title>
                 <h4>Register</h4>
               </mdb-card-title>
-          
+
               <!--Text-->
               <!-- Default form login -->
             <form class="text-center white-placeholder p-2 w-40">
-            
+
                 <input #first_name mdbInput type="fName" id="defaultLoginFormEmail" class="trans form-control mb-4 white-shadow" placeholder="FirstName">
-            
+
                 <input #last_name mdbInput type="lName" id="defaultLoginFormPassword" class="trans form-control mb-4 white-shadow" placeholder="LastName">
 
                 <input #user_name mdbInput type="username" id="defaultLoginFormEmail" class="trans form-control mb-4 white-shadow" placeholder="UserName">
-            
+
                 <input #password mdbInput type="password" id="defaultLoginFormPassword" class="trans form-control mb-4 white-shadow" placeholder="Password">
 
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <label for='cust-last-sync'>Date</label>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <!-- <label for='cust-last-sync'>Date</label> -->
                     <form class="form-inline">
                       <div class="form-group">
-                        <div class="input-group">
-                          <input class="form-control" id="cust-last-sync"  placeholder="yyyy-mm-dd"
+                        <div class="input-group w-100">
+                          <input class="form-control white-shadow" id="cust-last-sync"  placeholder="Date of birth"
                                  name="dp" [(ngModel)]="registeredDate" ngbDatepicker #d="ngbDatepicker">
                           <div class="input-group-append">
-                            <button class="btn btn-sm button-outline-primary calendar" (click)="d.toggle()" type="button">
+                            <button class="btn btn-sm white-shadow button-outline-primary calendar" (click)="d.toggle()" type="button">
                               <mdb-icon far icon="calendar-alt"></mdb-icon>
                             </button>
                           </div>
@@ -39,14 +39,14 @@
                   </div>
 
 
-        
+
                 <button mdbBtn color="transparent"  class="my-4 white-shadow hover-btn" type="submit" (click)="register()">Register</button>
-            
+
                 <p>Already a member?  <a routerLink="/login">Login</a></p>
-            
+
                 <!-- Social login -->
                 <p>or sign in with:</p>
-            
+
                 <a type="button" class="light-blue-text mx-2">
                 <mdb-icon fab icon="facebook"></mdb-icon>
                 </a>
@@ -59,10 +59,10 @@
                 <a type="button" class="light-blue-text mx-2">
                 <mdb-icon fab icon="github"></mdb-icon>
                 </a>
-            
+
             </form>
   <!-- Default form login -->
-          
+
             </mdb-card-body>
           </mdb-card>
     </div>

@@ -35,7 +35,13 @@ export class RegisterComponent implements OnInit {
     const dateObj = new Date(this.registeredDate.year, this.registeredDate.month,this.registeredDate.day)
     this.user.birthDate = dateObj;
     console.log(this.user);
-    this.userService.register(this.user).subscribe(res => {console.log(res)})
+    this.userService.register(this.user).subscribe(res => {
+      console.log(res);
+      const user = res as User;
+      this.userService.sendMail(user).subscribe(res => {
+        console.log(res, 'Message sent');
+      })
+    })
   }
 
 
