@@ -7,8 +7,8 @@ import { User } from './models/user';
 })
 export class UserService {
 
-  // url = 'http://localhost:3003/api';
-  url = 'https://omowunmi-be.firebaseapp.com/api';
+  url = 'http://localhost:3003/api';
+  // url = 'https://omowunmi-be.firebaseapp.com/api';
 
   constructor(private http: HttpClient) { }
 
