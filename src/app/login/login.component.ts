@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   @ViewChild("password")
   password!: ElementRef;
   user:User = new User();
+  errorMessage = '';
 
 
   constructor(private userService: UserService, private router: Router) { }
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.user).subscribe(res => {
       let response = res as any;
       console.log(response);
+      this.userService.updateSelectedUser(response.user);
       if(res){
         if(response.user.userType == UserType.Admin){
           this.router.navigate(['/admin'])
@@ -36,6 +38,12 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home'])
         }
       }
+      else{
+        console.log('what')
+      }
+    },(error) => {
+        this.errorMessage = error.error
+      console.log(error)
     })
 
   }

@@ -38,6 +38,7 @@ export class AdminComponent implements OnInit {
 
   HomepageClick() {
     this.routeText = "Homepage";
+    this.router.navigate(['/admin/home']);
   }
 
   usersClick() {
