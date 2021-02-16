@@ -1,0 +1,68 @@
+<div>
+    <div class="sidebar-fixed position-fixed">
+      <div class="list-group padding-zero list-group-flush">
+        <div class="div-border white-color">
+          <a class="list-group-item list-group-item-action">
+            <img src="../../assets/images/sunset1.jpeg" class="img-fluid margin-right" alt="" />
+            <span class="hide-span">Evolance</span>
+            <mdb-icon fas icon="" class="padding-left hide-span"></mdb-icon>
+          </a>
+        </div>
+  
+        <div class="mt-2"></div>
+        <a routerLink="/admin" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect"
+          (click)="HomepageClick()">
+          <mdb-icon fas icon="home" class="margin-right"></mdb-icon><span class="hide-span">Homepage</span>
+        </a>
+        <div class="divider"></div>
+        <a (click)="usersClick()" routerLinkActive="active"
+          class="list-group-item list-group-item-action waves-effect">
+          <mdb-icon fas icon="user" class="margin-right"></mdb-icon><span class="hide-span">Users</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="page-bg pad4">
+    <mdb-card class="mb-4 dashb-hgt2 custom-bg2 wow fadeIn justify-content-between">
+      <h4 class="p-3 inherit nav-link" mdbWavesEffect>
+        <a class="text-white" href="" target="_blank"><strong>Dashboard</strong></a>
+        <span class="pj-color"><strong>/{{this.routeText}}</strong></span>
+      </h4>
+    </mdb-card>
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!-- <div style="overflow-y: auto" mdbModal #logoutModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <!-- <div class="modal-content p-4"> ->
+      <div class="modal-content">
+        <!-- <div class="bg-blue p-4"> ->
+        <div class="bg-blue p-3">
+            <span class="modal-font">Logging Out</span>
+            <span (click)="logoutModal.hide()" class="float-right"><i class="float-right fas fa-times fa-1x cursor-pointer mr-3 mt-2 modal-font"></i></span>
+          </div>
+  
+          <!-- <span (click)="logoutModal.hide()" class="float-right px-3 py-3"><i class="float-right fas fa-times fa-2x cursor-pointer"></i></span> -->
+          <!-- <div class="modal-body p-0 mt-1"> ->
+          <div class="modal-body p-4 mt-1">
+  
+            Are you sure you want to logout?
+  
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <button (click)="logoutClick()" mdbBtn color="success" block="true" class="my-4"> Yes </button>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <button (click)="logoutModal.hide()" mdbBtn color="danger" block="true" class="my-4"> No </button>
+                </div>
+            </div>
+  
+        </div>
+        </div>
+        </div>
+  </div> -->
+  
+        
+  
+  

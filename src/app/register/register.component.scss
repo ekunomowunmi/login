@@ -1,0 +1,37 @@
+.background-image{
+    background-image: url("../../assets/images/interview-1.jpg");
+    background-size: cover;
+    height: 100vh;
+    // : 100vw;
+}
+
+.top-30{
+    margin-top: 50%;
+}
+
+.card{
+    background: transparent !important;
+}
+
+.trans.form-control{
+background: transparent !important;
+border-radius: 1.25rem !important;
+}
+
+.white-shadow{
+    -webkit-box-shadow: 1px 1px 10px 2px #fff !important;
+    -moz-box-shadow: 1px 1px 10px 2px #fff !important;
+    box-shadow: 1px 1px 10px 2px #fff !important;
+}
+
+.white-placeholder> ::placeholder{
+    color: white !important;
+}
+
+.w-30vw{
+    width: 30vw;;
+}
+
+.hover-btn:hover{
+    background-color: white !important;
+}
