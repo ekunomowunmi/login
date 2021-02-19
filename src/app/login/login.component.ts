@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { User } from '../models/user';
 import { UserType } from '../models/user-type.enum';
 import { UserService } from '../user.service';
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(this.user).subscribe(res => {
       let response = res as any;
+      this.toastr.success("Login Successful",'Notification');
       console.log(response);
       this.userService.updateSelectedUser(response.user);
       if(res){

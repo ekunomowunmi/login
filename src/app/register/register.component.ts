@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { interval } from 'rxjs';
 import { User } from '../models/user';
 import { UserService } from '../user.service';
 
@@ -20,7 +22,7 @@ export class RegisterComponent implements OnInit {
   @ViewChild("password")
   password!: ElementRef;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -32,15 +34,25 @@ export class RegisterComponent implements OnInit {
     this.user.lastName = this.last_name.nativeElement.value;
     this.user.email = this.user_name.nativeElement.value;
     this.user.password = this.password.nativeElement.value;
-    const dateObj = new Date(this.registeredDate.year, this.registeredDate.month,this.registeredDate.day)
+    let  dateObj = new Date(Date.now());
+    if(this.registeredDate){
+     dateObj = new Date(this.registeredDate.year, this.registeredDate.month,this.registeredDate.day)
+    }
+
     this.user.birthDate = dateObj;
     console.log(this.user);
     this.userService.register(this.user).subscribe(res => {
       console.log(res);
+      if(res){
+        this.toastr.success("Registration Successful, you can as well login")
+
+      }
       const user = res as User;
       this.userService.sendMail(user).subscribe(res => {
         console.log(res, 'Message sent');
       })
+    }, error => {
+      this.toastr.error("An error Occured in Registration, Please Try again");
     })
   }
 
